@@ -56,7 +56,7 @@ namespace SalesWebMvc.Controllers
                 return RedirectToAction(nameof(Error), new { message ="Id Not Provided"});
             }
 
-            var obj = _sellerService.FindByIdAsync(id.Value);
+            var obj = await _sellerService.FindByIdAsync(id.Value);
             if(obj == null)
             {
                   return RedirectToAction(nameof(Error), new { message ="Id Not Found"});
